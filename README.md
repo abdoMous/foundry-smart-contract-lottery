@@ -2,7 +2,30 @@
 
 # Foundry Smart Contract Lottery
 
-An agnostic smart contract to create provably fare lottery
+Welcome to the Foundry Smart Contract Lottery project. This is an agnostic smart contract developed to create provably fair lotteries. This contract can be deployed on any blockchain network that supports EVM-compatible smart contracts, offering a flexible and reliable solution for decentralized lotteries.
+
+Key features include:
+
+- Provably fair lottery system using Chainlink VRF
+- Support for deploying the contract on various testnets and mainnets
+- Ability to estimate the gas cost for contract operations
+
+# Table of Contents
+
+1. [Getting Started](#getting-started)
+   - [Requirements](#requirements)
+   - [Quickstart](#quickstart)
+   - [Optional Gitpod](#optional-gitpod)
+2. [Usage](#usage)
+   - [Start a local node](#start-a-local-node)
+   - [Library](#library)
+   - [Deploy](#deploy)
+   - [Testing](#testing)
+   - [Test Coverage](#test-coverage)
+3. [Deployment to a Testnet or Mainnet](#deployment-to-a-testnet-or-mainnet)
+   - [Scripts](#scripts)
+   - [Estimate Gas](#estimate-gas)
+4. [Formatting](#formatting)
 
 # Getting Started
 
@@ -16,8 +39,8 @@ An agnostic smart contract to create provably fare lottery
 ## Quickstart
 
 ```
-git clone https://github.com/Cyfrin/foundry-smart-contract-lottery-f23
-cd foundry-smart-contract-lottery-f23
+git clone https://github.com/abdoMous/foundry-smart-contract-lottery
+cd foundry-smart-contract-lottery
 forge build
 ```
 
@@ -25,11 +48,13 @@ forge build
 
 If you can't or don't want to run and install locally, you can work with this repo in Gitpod. If you do this, you can skip the `clone this repo` part.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/ChainAccelOrg/foundry-smart-contract-lottery-f23)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/abdoMous/foundry-smart-contract-lottery)
 
 # Usage
 
 ## Start a local node
+
+Start a local node with the following command:
 
 ```
 make anvil
@@ -53,17 +78,21 @@ make deploy
 
 ## Testing
 
+Run tests with the following command:
+
 ```
 forge test
 ```
 
-or
+Or use this command if you want to specify a fork url:
 
 ```
 forge test --fork-url $SEPOLIA_RPC_URL
 ```
 
 ### Test Coverage
+
+Generate a test coverage report with this command:
 
 ```
 forge coverage
@@ -97,9 +126,7 @@ This will setup a ChainlinkVRF Subscription for you. If you already have one, up
 
 [You can follow the documentation if you get lost.](https://docs.chain.link/chainlink-automation/compatible-contracts)
 
-Go to [automation.chain.link](https://automation.chain.link/new) and register a new upkeep. Choose `Custom logic` as your trigger mechanism for automation. Your UI will look something like this once completed:
-
-![Automation](./img/keepers.png)
+Go to [automation.chain.link](https://automation.chain.link/new) and register a new upkeep. Choose `Custom logic` as your trigger mechanism for automation.
 
 ## Scripts
 
@@ -119,7 +146,7 @@ make createSubscription ARGS="--network sepolia"
 
 ## Estimate gas
 
-You can estimate how much gas things cost by running:
+You can estimate how much gas things cost by running this command:
 
 ```
 forge snapshot
